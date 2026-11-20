@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /_originals/
+Disallow: /tools/
+
+Sitemap: https://www.agmpaintingllc.com/sitemap.xml
