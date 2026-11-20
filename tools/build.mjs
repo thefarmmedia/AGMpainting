@@ -92,24 +92,28 @@ const serviceSchema = (name, url, desc, area) => ({
 });
 
 // ── layout pieces ───────────────────────────────────────────
-function header(active) {
-  const link = (href, label, key) => `<a href="${href}"${active === key ? ' aria-current="page"' : ''}>${label}</a>`;
+function header(active, url) {
+  const menu = (label, key, links, wide = false) => `<details class="nav-group${wide ? ' nav-group-wide' : ''}" name="main-navigation"${active === key ? ' data-current' : ''}>
+    <summary>${label}</summary>
+    <ul class="nav-links">
+      ${links.map(([text, href]) => `<li><a href="${esc(href)}"${url === href ? ' aria-current="page"' : ''}>${esc(text)}</a></li>`).join('\n      ')}
+    </ul>
+  </details>`;
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="hdr" data-hdr>
   <div class="wrap hdr-in">
     <a class="brand" href="/" aria-label="AGM Painting home">
       <img src="/assets/img/agm-painting-logo-white.webp" alt="AGM Painting logo" width="600" height="487">
     </a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-burger><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Main">
-      ${link('/services/', 'Services', 'services')}
-      ${link('/service-areas/', 'Service Areas', 'areas')}
-      ${link('/gallery/', 'Our Work', 'gallery')}
-      ${link('/about/', 'About', 'about')}
-      ${link('/contact/', 'Contact', 'contact')}
-      <a class="nav-phone" href="${tel}">${icon('phone')} ${BIZ.phone}</a>
+      ${menu('Services', 'services', [['All services', '/services/'], ...SERVICES.map((s) => [s.name, `/services/${s.slug}/`])])}
+      ${menu('Service Areas', 'areas', [['All service areas', '/service-areas/'], ...AREAS.map((a) => [a.name, `/service-areas/${a.slug}/`])], true)}
+      ${menu('Our Work', 'gallery', [['Project gallery', '/gallery/'], ['Before & after', '/gallery/#before-after']])}
+      ${menu('About', 'about', [['Meet the owner', '/about/'], ['Our process', '/#proc-h'], ['Customer reviews', '/#rev-h']])}
+      ${menu('Contact', 'contact', [['Contact information', '/contact/'], ['Request a free estimate', '/contact/#quote'], [`Call ${BIZ.phone}`, tel]])}
     </nav>
-    <a class="btn btn-sm btn-accent hdr-cta" href="/#estimate-form">Free Estimate</a>
-    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-burger><span></span><span></span><span></span></button>
+    <a class="btn btn-sm btn-accent hdr-cta" href="/#estimate-form">Free Estimate ${icon('arrow')}</a>
   </div>
 </header>`;
 }
@@ -230,11 +234,11 @@ function pageHero({ title, lead, image, items, eyebrow }) {
 </section>`;
 }
 
-function layout({ url, title, desc, body, active, schema = [], ogImage = 'stained-cedar-garage-exterior-springfield-mo', noindex = false, preload }) {
+function layout({ url, title, desc, body, active, schema = [], ogImage = 'stained-cedar-garage-exterior-springfield-mo', noindex = false, preload, preloadSizes = '100vw' }) {
   if (!noindex) pages.push(url);
   const canonical = `${SITE}${url}`;
   const ld = [businessSchema(), ...schema].map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n');
-  const pre = preload ? `<link rel="preload" as="image" href="/assets/img/${preload}-800.webp" imagesrcset="/assets/img/${preload}-800.webp 800w, /assets/img/${preload}-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">` : '';
+  const pre = preload ? `<link rel="preload" as="image" href="/assets/img/${preload}-800.webp" imagesrcset="/assets/img/${preload}-800.webp 800w, /assets/img/${preload}-1600.webp ${Math.min(MANIFEST[preload].w, 1600)}w" imagesizes="${preloadSizes}" fetchpriority="high">` : '';
   return `<!doctype html>
 <html lang="en-US">
 <head>
@@ -268,7 +272,7 @@ ${pre}
 ${ld}
 </head>
 <body>
-${header(active)}
+${header(active, url)}
 <main id="main">
 ${body}
 </main>
@@ -309,43 +313,41 @@ const ba = (before, after, label) => `<figure class="ba reveal" data-ba>
 
 // ── HOME ────────────────────────────────────────────────────
 function home() {
+  const project = 'stained-cedar-garage-exterior-springfield-mo';
+  const projectSizes = '(min-width: 1240px) 620px, (min-width: 900px) 52vw, 100vw';
   const body = `
 <section class="hero" id="estimate">
-  ${img('stained-cedar-garage-exterior-springfield-mo', { sizes: '100vw', cls: 'hero-bg', eager: true, alt: '' })}
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="eyebrow">${icon('pin')} Springfield, MO &amp; 30 miles around</p>
-      <h1>Springfield’s <span class="hl">Painting Contractor</span><span class="h1-sub">for homes &amp; businesses that turn heads</span></h1>
-      <p class="lead">Interior, exterior and commercial painting, cedar staining and more from a family-focused crew that preps like a perfectionist and treats your home like our own.</p>
-      <ul class="hero-points">
-        <li>${icon('check')} Free, no-pressure estimates</li>
-        <li>${icon('check')} Family-owned &amp; owner on every job</li>
-        <li>${icon('check')} Meticulous prep &amp; spotless cleanup</li>
-      </ul>
+      <p class="eyebrow">Springfield, Missouri</p>
+      <h1>Painting for homes<br class="hero-break"> <em>&amp; businesses.</em></h1>
+      <p class="lead">Interior and exterior painting, commercial repaints, and cedar staining by a family-owned crew that takes the time to prep right.</p>
       <div class="hero-btns">
-        <a class="btn btn-ghost btn-lg" href="${tel}">${icon('phone')} ${BIZ.phone}</a>
+        <a class="btn btn-accent" href="#estimate-form">Get a free estimate ${icon('arrow')}</a>
         <a class="link-under" href="/gallery/">See our work ${icon('arrow')}</a>
       </div>
     </div>
-    <div class="hero-form">${estimateForm()}</div>
+    <figure class="hero-project">
+      ${img(project, { sizes: projectSizes, eager: true })}
+      <figcaption><a href="/services/cedar-siding-staining/">Cedar staining in Springfield ${icon('arrow')}</a></figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="trust" aria-label="Why choose AGM Painting">
   <div class="wrap trust-in">
-    <div>${icon('family')}<p><strong>Family-Focused</strong><span>Customer always first</span></p></div>
-    <div>${icon('clock')}<p><strong>Early Starts</strong><span>Crews rolling at 6 AM</span></p></div>
-    <div>${icon('shield')}<p><strong>Prep Perfectionists</strong><span>Floors &amp; yards protected</span></p></div>
-    <div>${icon('star')}<p><strong>High-End Finish</strong><span>Crisp lines, even coats</span></p></div>
+    <div>${icon('family')}<p><strong>Family-owned</strong><span>Owner on every job</span></p></div>
+    <div>${icon('shield')}<p><strong>Careful prep</strong><span>Floors &amp; landscaping protected</span></p></div>
+    <div>${icon('star')}<p><strong>Detailed finish</strong><span>Crisp lines and even coats</span></p></div>
+    <div>${icon('pin')}<p><strong>Local crew</strong><span>Serving a 30-mile radius</span></p></div>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">What we do</p>
       <h2 id="svc-h">Painting services in Springfield, MO</h2>
-      <p>One crew for every surface, from a single accent wall to a full exterior, a commercial office or a cedar home that needs new stain.</p>
+      <p>From a single room to a full exterior, find the right service for your project.</p>
     </div>
     ${serviceCards()}
   </div>
@@ -355,7 +357,7 @@ function home() {
   <div class="wrap">
     <div class="sec-head center">
       <p class="eyebrow">Drag the slider</p>
-      <h2 id="ba-h">Before &amp; after. The proof is in the prep.</h2>
+      <h2 id="ba-h">Before &amp; after</h2>
     </div>
     <div class="ba-grid">
       ${ba('garage-before-peeling-paint-springfield-mo', 'garage-after-exterior-painting-springfield-mo', 'Peeling garage: scraped, primed &amp; repainted')}
@@ -368,7 +370,6 @@ function home() {
   <div class="wrap split">
     <div class="split-media reveal">
       ${img('commercial-office-repaint-in-progress-springfield-mo', { sizes: '(min-width: 1024px) 50vw, 100vw' })}
-      <div class="badge-float"><strong>100%</strong><span>prep-first process</span></div>
     </div>
     <div class="split-copy">
       <p class="eyebrow">How we work</p>
@@ -425,12 +426,23 @@ ${reviewsBlock()}
 </section>
 
 ${faqBlock(HOME_FAQS)}
+
+<section class="sec estimate-section" aria-labelledby="estimate-heading">
+  <div class="wrap split">
+    <div>
+      <h2 id="estimate-heading">Let’s talk about your project.</h2>
+      <p>Tell us what you’d like painted and Anthony will reach out to set up your free estimate.</p>
+      <a class="link-under" href="${tel}">${icon('phone')} ${BIZ.phone}</a>
+    </div>
+    ${estimateForm()}
+  </div>
+</section>
 `;
   write('/', layout({
     url: '/',
     title: 'Painters in Springfield, MO | Interior & Exterior | AGM Painting',
     desc: 'Family-owned painting contractor in Springfield, MO. Interior, exterior & commercial painting and cedar staining within 30 miles. Free estimates: (417) 224-0103.',
-    body, active: 'home', preload: 'stained-cedar-garage-exterior-springfield-mo',
+    body, active: 'home', preload: project, preloadSizes: projectSizes,
     schema: [faqSchema(HOME_FAQS), { '@context': 'https://schema.org', '@type': 'WebSite', name: BIZ.short, url: `${SITE}/` }],
   }));
 }
@@ -632,7 +644,7 @@ function gallery() {
     </div>
   </div>
 </section>
-<section class="sec sec-dark"><div class="wrap"><div class="sec-head center"><p class="eyebrow">Before &amp; after</p><h2>See the difference prep makes</h2></div><div class="ba-grid">
+<section class="sec sec-dark" id="before-after"><div class="wrap"><div class="sec-head center"><p class="eyebrow">Before &amp; after</p><h2>See the difference prep makes</h2></div><div class="ba-grid">
   ${ba('garage-before-peeling-paint-springfield-mo', 'garage-after-exterior-painting-springfield-mo', 'Garage: peeling green to fresh gray')}
   ${ba('ranch-house-before-exterior-painting', 'ranch-house-after-exterior-painting-gray', 'Ranch home exterior repaint')}
   ${ba('commercial-wall-repair-prep-before', 'commercial-office-repaint-finished', 'Commercial office: repaired &amp; repainted')}
