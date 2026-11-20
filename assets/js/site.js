@@ -6,14 +6,48 @@
   const onScroll = () => hdr && hdr.classList.toggle('scrolled', window.scrollY > 10);
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // Mobile nav
+  // Keep the same disclosure navigation on desktop and mobile.
   const burger = document.querySelector('[data-burger]');
   const nav = document.getElementById('nav');
   if (burger && nav) {
-    const set = (open) => { burger.setAttribute('aria-expanded', String(open)); nav.classList.toggle('open', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
-    burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
-    nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+    const openGroup = () => nav.querySelector('.nav-group[open]');
+    const mobileOpen = () => burger.getAttribute('aria-expanded') === 'true';
+    const closeGroup = () => openGroup()?.removeAttribute('open');
+    const setMobile = (open) => {
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      nav.classList.toggle('open', open);
+      if (!open) closeGroup();
+    };
+
+    burger.addEventListener('click', () => setMobile(!mobileOpen()));
+    nav.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (!link) return;
+      if (mobileOpen()) burger.focus({ preventScroll: true });
+      else openGroup()?.querySelector('summary').focus({ preventScroll: true });
+      setMobile(false);
+    });
+    nav.addEventListener('focusout', (event) => {
+      const group = openGroup();
+      if (group && !group.contains(event.relatedTarget)) group.open = false;
+      if (mobileOpen() && !nav.contains(event.relatedTarget) && event.relatedTarget !== burger) setMobile(false);
+    });
+    document.addEventListener('click', (event) => {
+      if (!nav.contains(event.target) && !burger.contains(event.target)) setMobile(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || (!nav.contains(event.target) && event.target !== burger)) return;
+      const group = openGroup();
+      if (group) {
+        group.querySelector('summary').focus();
+        group.open = false;
+      } else if (mobileOpen()) {
+        burger.focus();
+        setMobile(false);
+      }
+    });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', () => setMobile(false));
   }
 
   // Footer year
