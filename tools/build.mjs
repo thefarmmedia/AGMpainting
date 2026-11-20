@@ -335,6 +335,17 @@ function home() {
   </div>
 </section>
 
+<section class="sec estimate-section">
+  <div class="wrap split">
+    ${estimateForm()}
+    <div>
+      <h2>What happens next?</h2>
+      <p>Anthony will reach out to set up your free estimate and talk through your project.</p>
+      <a class="link-under" href="${tel}">${icon('phone')} ${BIZ.phone}</a>
+    </div>
+  </div>
+</section>
+
 <section class="trust" aria-label="Why choose AGM Painting">
   <div class="wrap trust-in">
     <div>${icon('family')}<p><strong>Family-owned</strong><span>Owner on every job</span></p></div>
@@ -427,17 +438,6 @@ ${reviewsBlock()}
 </section>
 
 ${faqBlock(HOME_FAQS)}
-
-<section class="sec estimate-section" aria-labelledby="estimate-heading">
-  <div class="wrap split">
-    <div>
-      <h2 id="estimate-heading">Let’s talk about your project.</h2>
-      <p>Tell us what you’d like painted and Anthony will reach out to set up your free estimate.</p>
-      <a class="link-under" href="${tel}">${icon('phone')} ${BIZ.phone}</a>
-    </div>
-    ${estimateForm()}
-  </div>
-</section>
 `;
   write('/', layout({
     url: '/',
