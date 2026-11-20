@@ -323,10 +323,7 @@ function home() {
       <p class="eyebrow">Springfield, Missouri</p>
       <h1>Painting for homes<br class="hero-break"> <em>&amp; businesses.</em></h1>
       <p class="lead">Interior and exterior painting, commercial repaints, and cedar staining by a family-owned crew that takes the time to prep right.</p>
-      <div class="hero-btns">
-        <a class="btn btn-accent" href="#estimate-form">Get a free estimate ${icon('arrow')}</a>
-        <a class="link-under" href="/gallery/">See our work ${icon('arrow')}</a>
-      </div>
+      <a class="link-under" href="/gallery/">See our work ${icon('arrow')}</a>
     </div>
     <figure class="hero-project">
       ${img(project, { sizes: projectSizes, eager: true })}
