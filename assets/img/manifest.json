@@ -1,0 +1,471 @@
+{
+ "interior-laundry-room-painting-springfield-mo": {
+  "alt": "Freshly painted laundry room with gray walls and white trim",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 0
+ },
+ "mudroom-interior-painting-springfield-mo": {
+  "alt": "Mudroom repaint with crisp walls beside a built-in wood bench",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 1
+ },
+ "bedroom-repaint-new-construction-springfield-mo": {
+  "alt": "Bedroom painted in a soft greige in a new-construction home",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 2
+ },
+ "bathroom-painting-granite-vanity-springfield-mo": {
+  "alt": "Bathroom walls painted around a granite vanity",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 3
+ },
+ "vaulted-living-room-painting-springfield-mo": {
+  "alt": "Vaulted living room with fireplace, freshly painted",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 5
+ },
+ "interior-prep-floor-protection-springfield-mo": {
+  "alt": "Floors fully covered with protective paper before interior painting",
+  "cat": "prep",
+  "w": 1536,
+  "h": 2048,
+  "idx": 6
+ },
+ "window-masking-prep-before-painting": {
+  "alt": "Windows and trim masked in plastic before spraying",
+  "cat": "prep",
+  "w": 2048,
+  "h": 1536,
+  "idx": 7
+ },
+ "floor-protection-plastic-before-painting": {
+  "alt": "Room floor wrapped in plastic sheeting before painting",
+  "cat": "prep",
+  "w": 2048,
+  "h": 1536,
+  "idx": 10
+ },
+ "ceiling-painting-stone-fireplace-living-room": {
+  "alt": "Living room ceiling repainted above a stone fireplace",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 15
+ },
+ "commercial-office-repaint-in-progress-springfield-mo": {
+  "alt": "AGM painter cutting in a commercial office wall",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 16
+ },
+ "commercial-office-wall-primer-springfield-mo": {
+  "alt": "Office walls primed over dark purple and olive paint",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 17
+ },
+ "commercial-office-painting-finished-springfield-mo": {
+  "alt": "Finished commercial office wall with new paint",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 18
+ },
+ "retail-storefront-interior-painting-springfield-mo": {
+  "alt": "Storefront interior walls painted a warm tan",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 19
+ },
+ "hallway-painting-springfield-mo": {
+  "alt": "Bright painted hallway with recessed lighting",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 22
+ },
+ "teal-accent-wall-bedroom-painting": {
+  "alt": "Bedroom painted in a deep teal with a textured white ceiling",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 24
+ },
+ "gray-lap-siding-exterior-painting-springfield-mo": {
+  "alt": "Gray lap siding and white trim after exterior painting",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 25
+ },
+ "exterior-house-painting-gray-siding-white-trim": {
+  "alt": "House side repainted in gray with white window trim",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 26
+ },
+ "basement-black-exposed-ceiling-painting": {
+  "alt": "Basement with a black-painted exposed ceiling and white walls",
+  "cat": "basement",
+  "w": 2048,
+  "h": 1536,
+  "idx": 27
+ },
+ "painter-prepping-bedroom-springfield-mo": {
+  "alt": "Painter prepping a bedroom for a fresh coat",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 28
+ },
+ "ranch-home-exterior-painting-springfield-mo": {
+  "alt": "Ranch home exterior repainted in gray",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 29
+ },
+ "home-gym-basement-black-ceiling-painting": {
+  "alt": "Home gym basement with black dryfall ceiling and white walls",
+  "cat": "basement",
+  "w": 2048,
+  "h": 1536,
+  "idx": 30
+ },
+ "blue-accent-wall-bedroom-painting": {
+  "alt": "Bedroom with a blue accent wall painted",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 31
+ },
+ "white-bedroom-interior-painting-springfield-mo": {
+  "alt": "Bright white bedroom after an interior repaint",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 32
+ },
+ "shiplap-wall-painting-white": {
+  "alt": "White painted shiplap wall with clean lines",
+  "cat": "interior",
+  "w": 1536,
+  "h": 2048,
+  "idx": 33
+ },
+ "garage-before-peeling-paint-springfield-mo": {
+  "alt": "Before: garage with failing, peeling green paint",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 35
+ },
+ "white-painted-brick-home-porch-springfield-mo": {
+  "alt": "White-painted brick home with porch railings",
+  "cat": "exterior",
+  "w": 1280,
+  "h": 720,
+  "idx": 36
+ },
+ "garage-after-exterior-painting-springfield-mo": {
+  "alt": "After: garage scraped, primed and painted gray with white trim",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 37
+ },
+ "bedroom-repaint-white-doors-trim": {
+  "alt": "Bedroom repaint with white doors and trim",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 38
+ },
+ "brick-home-trim-painting-springfield-mo": {
+  "alt": "Brick home exterior trim painting with ladder setup",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 39
+ },
+ "navy-accent-wall-bedroom-springfield-mo": {
+  "alt": "Bedroom with a navy accent wall",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 41
+ },
+ "ranch-house-before-exterior-painting": {
+  "alt": "Before: green ranch home siding before exterior painting",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 42
+ },
+ "hallway-walls-trim-painting": {
+  "alt": "Long hallway with freshly painted walls and trim",
+  "cat": "interior",
+  "w": 1536,
+  "h": 2048,
+  "idx": 43
+ },
+ "ranch-house-after-exterior-painting-gray": {
+  "alt": "After: ranch home repainted charcoal gray with white trim",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 44
+ },
+ "basement-exposed-ceiling-black-paint-springfield-mo": {
+  "alt": "Finished basement with spray-painted black exposed ceiling",
+  "cat": "basement",
+  "w": 2048,
+  "h": 1536,
+  "idx": 48
+ },
+ "gray-siding-exterior-repaint": {
+  "alt": "Gray exterior siding and window trim painting",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 49
+ },
+ "front-door-painting-gray-brick-home": {
+  "alt": "Gray painted front door on a brick home",
+  "cat": "doors",
+  "w": 1536,
+  "h": 2048,
+  "idx": 50
+ },
+ "basement-laundry-black-ceiling-painting": {
+  "alt": "Basement laundry area with black painted ceiling",
+  "cat": "basement",
+  "w": 2048,
+  "h": 1536,
+  "idx": 52
+ },
+ "entry-door-painting-springfield-mo": {
+  "alt": "Entry door painted a soft gray",
+  "cat": "doors",
+  "w": 1536,
+  "h": 2048,
+  "idx": 53
+ },
+ "bathroom-repaint-white-trim": {
+  "alt": "Bathroom and adjoining rooms repainted with white trim",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 55
+ },
+ "soffit-porch-ceiling-painting": {
+  "alt": "Painted porch soffit ceiling between brick walls",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 56
+ },
+ "shed-painting-before-springfield-mo": {
+  "alt": "Barn-style shed during exterior painting",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 57
+ },
+ "tray-ceiling-bedroom-painting": {
+  "alt": "Bedroom with tray ceiling freshly painted",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 58
+ },
+ "bedroom-interior-painting-nixa-mo": {
+  "alt": "Bedroom with clean white walls after painting",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 59
+ },
+ "commercial-wall-repair-prep-before": {
+  "alt": "Before: damaged commercial wall being repaired and prepped",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 61
+ },
+ "green-house-before-exterior-painting": {
+  "alt": "Before: green siding and red door before repaint",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 62
+ },
+ "commercial-office-wainscot-after-painting": {
+  "alt": "After: commercial office wall repaired and repainted",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 63
+ },
+ "interior-hallway-to-living-room-painting": {
+  "alt": "Hallway opening to a freshly painted living room",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 65
+ },
+ "commercial-lobby-painting-springfield-mo": {
+  "alt": "Commercial lobby with storefront windows during repaint",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 66
+ },
+ "commercial-office-repaint-finished": {
+  "alt": "Finished commercial office repaint with wainscot",
+  "cat": "commercial",
+  "w": 2048,
+  "h": 1536,
+  "idx": 67
+ },
+ "garage-door-painting-blue-gray-springfield-mo": {
+  "alt": "Garage door painted a blue-gray on a brick home",
+  "cat": "doors",
+  "w": 2048,
+  "h": 1536,
+  "idx": 69
+ },
+ "shed-exterior-painting-springfield-mo": {
+  "alt": "Shed exterior painted white with dark trim",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 70
+ },
+ "bedroom-painting-closet-doors-trim": {
+  "alt": "Bedroom repaint with white closet doors and trim",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 71
+ },
+ "bathroom-painting-springfield-mo": {
+  "alt": "Bathroom repainted with white walls and trim",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 72
+ },
+ "barn-shed-painting-white-gray-trim": {
+  "alt": "Barn-style shed painted white with gray trim",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 73
+ },
+ "shed-painting-ozark-mo": {
+  "alt": "Finished shed painting with gray trim and door",
+  "cat": "exterior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 74
+ },
+ "painter-rolling-ceiling-springfield-mo": {
+  "alt": "AGM painter rolling a ceiling with an extension pole",
+  "cat": "interior",
+  "w": 2048,
+  "h": 1536,
+  "idx": 75
+ },
+ "red-cedar-home-staining-springfield-mo": {
+  "alt": "Cedar home exterior stained a rich barn red",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 76
+ },
+ "log-home-exterior-stain-missouri": {
+  "alt": "Rural home with freshly stained red siding",
+  "cat": "staining",
+  "w": 1080,
+  "h": 718,
+  "idx": 77
+ },
+ "agm-painting-crew-exterior-staining-job": {
+  "alt": "AGM Painting crew on an exterior staining job",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 78
+ },
+ "stained-cedar-garage-exterior-springfield-mo": {
+  "alt": "Cedar-sided garage freshly stained red with black trim",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 79
+ },
+ "red-stained-home-wooded-lot-springfield-mo": {
+  "alt": "Stained red home on a wooded lot",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 80
+ },
+ "a-frame-cedar-siding-stain": {
+  "alt": "A-frame gable with freshly stained cedar siding",
+  "cat": "staining",
+  "w": 960,
+  "h": 720,
+  "idx": 81
+ },
+ "cedar-siding-staining-exterior": {
+  "alt": "Side of home with stained cedar siding and trim",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 82
+ },
+ "rough-sawn-cedar-siding-stain-springfield-mo": {
+  "alt": "Rough-sawn vertical cedar siding after staining",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 83
+ },
+ "vertical-wood-siding-staining": {
+  "alt": "Vertical wood siding restained a deep brown",
+  "cat": "staining",
+  "w": 2048,
+  "h": 1536,
+  "idx": 84
+ },
+ "stone-home-garage-doors-stained-springfield-mo": {
+  "alt": "Stone home with three stained wood garage doors",
+  "cat": "doors",
+  "w": 2048,
+  "h": 1536,
+  "idx": 85
+ },
+ "painter-staining-wood-siding-ladder": {
+  "alt": "Painter staining wood siding from a ladder",
+  "cat": "staining",
+  "w": 1536,
+  "h": 2048,
+  "idx": 86
+ }
+}
