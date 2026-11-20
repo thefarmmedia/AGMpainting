@@ -8,6 +8,7 @@ import { BIZ, SERVICES, AREAS, REVIEWS, HOME_FAQS } from './data.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MANIFEST = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/img/manifest.json'), 'utf8'));
 const SITE = BIZ.site.replace(/\/$/, '');
+const THEME_COLOR = '#202020';
 const VERSION = Date.now().toString(36);
 const pages = []; // for sitemap
 
@@ -260,7 +261,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" cont
 <meta property="og:image" content="${SITE}/assets/img/${ogImage}.jpg">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#1b2130">
+<meta name="theme-color" content="${THEME_COLOR}">
 <link rel="icon" href="/assets/icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -313,7 +314,7 @@ const ba = (before, after, label) => `<figure class="ba reveal" data-ba>
 
 // ── HOME ────────────────────────────────────────────────────
 function home() {
-  const project = 'stained-cedar-garage-exterior-springfield-mo';
+  const project = 'vaulted-living-room-painting-springfield-mo';
   const projectSizes = '(min-width: 1240px) 620px, (min-width: 900px) 52vw, 100vw';
   const body = `
 <section class="hero" id="estimate">
@@ -329,7 +330,7 @@ function home() {
     </div>
     <figure class="hero-project">
       ${img(project, { sizes: projectSizes, eager: true })}
-      <figcaption><a href="/services/cedar-siding-staining/">Cedar staining in Springfield ${icon('arrow')}</a></figcaption>
+      <figcaption><a href="/services/interior-painting/">Interior painting in Springfield ${icon('arrow')}</a></figcaption>
     </figure>
   </div>
 </section>
@@ -442,7 +443,7 @@ ${faqBlock(HOME_FAQS)}
     url: '/',
     title: 'Painters in Springfield, MO | Interior & Exterior | AGM Painting',
     desc: 'Family-owned painting contractor in Springfield, MO. Interior, exterior & commercial painting and cedar staining within 30 miles. Free estimates: (417) 224-0103.',
-    body, active: 'home', preload: project, preloadSizes: projectSizes,
+    body, active: 'home', ogImage: project, preload: project, preloadSizes: projectSizes,
     schema: [faqSchema(HOME_FAQS), { '@context': 'https://schema.org', '@type': 'WebSite', name: BIZ.short, url: `${SITE}/` }],
   }));
 }
@@ -722,5 +723,5 @@ ${pages.map((u) => `  <url><loc>${SITE}${u}</loc><lastmod>${today}</lastmod><pri
 </urlset>
 `);
 fs.writeFileSync(path.join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /thank-you/\nDisallow: /_originals/\nDisallow: /tools/\n\nSitemap: ${SITE}/sitemap.xml\n`);
-fs.writeFileSync(path.join(ROOT, 'site.webmanifest'), JSON.stringify({ name: BIZ.name, short_name: BIZ.short, icons: [{ src: '/assets/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/assets/icon-512.png', sizes: '512x512', type: 'image/png' }], theme_color: '#1b2130', background_color: '#1b2130', display: 'standalone', start_url: '/' }, null, 2));
+fs.writeFileSync(path.join(ROOT, 'site.webmanifest'), JSON.stringify({ name: BIZ.name, short_name: BIZ.short, icons: [{ src: '/assets/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/assets/icon-512.png', sizes: '512x512', type: 'image/png' }], theme_color: THEME_COLOR, background_color: THEME_COLOR, display: 'standalone', start_url: '/' }, null, 2));
 console.log(`Built ${pages.length} indexable pages → ${SITE}`);
